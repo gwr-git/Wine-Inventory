@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invintory Web</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Invintory</h1>
+      <p>Wine inventory, enrichment, and AI sommelier assistant.</p>
+    </header>
+
+    <main class="layout">
+      <section class="card">
+        <h2>Add bottle</h2>
+        <form id="add-form">
+          <label>Bottle name <input name="bottleName" required /></label>
+          <label>Producer <input name="producerName" required /></label>
+          <label>Region <input name="region" required /></label>
+          <label>Country <input name="country" required /></label>
+          <label>Cellar <input name="cellarName" value="Main Cellar" required /></label>
+          <label>Position <input name="rack" value="Rack A1" required /></label>
+          <div class="actions">
+            <button type="button" id="smart-fill">Smart Fill from public data</button>
+            <button type="submit">Save bottle</button>
+          </div>
+        </form>
+        <p id="smart-fill-status" class="muted"></p>
+      </section>
+
+      <section class="card">
+        <h2>Inventory</h2>
+        <input id="inventory-search" placeholder="Search producer, wine, or region" />
+        <ul id="inventory-list"></ul>
+      </section>
+
+      <section class="card full-width">
+        <h2>AI Sommelier</h2>
+        <div id="chat-history" class="chat"></div>
+        <form id="chat-form" class="chat-form">
+          <input name="prompt" placeholder="Ask for pairings, wine picks, drink windows..." required />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
